@@ -5,6 +5,7 @@ import mongoose  from 'mongoose'
 import test from './routers/test.js'
 import auth from './routers/auth.js'
 import user from './routers/user.js'
+import staff from './routers/staff.js'
 
 const app = express()
 const PORT = process.env.port || 5000
@@ -32,3 +33,4 @@ mongoose.connect(
 app.use('/test', test)
 app.use('/auth', auth)
 app.use('/user', user)
+app.use('/staff', staff)
