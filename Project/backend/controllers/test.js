@@ -53,7 +53,7 @@ export const update = async(req, res)=>{
 
 export const remove = async(req, res)=>{
     try{
-        const id = req.body.id
+        const id = req.params.id
         await testModel.findByIdAndDelete({_id: id})
         res.status(200).json("deleted")
         console.log(testModel)
