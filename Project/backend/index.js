@@ -1,27 +1,32 @@
-import app from "./server.js"
-import mongodb from "mongodb"
-import dotenv from "dotenv"
-import booksDAO from "./api/dao/booksDAO.js"
-dotenv.config()
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import mongoose  from 'mongoose'
+import test from './routers/test.js'
+import auth from './routers/auth.js'
 
-const port = process.env.PORT || 8000
+const app = express()
+const PORT = process.env.port || 5000
+const URI = 'mongodb+srv://admin:U6Qr6Ex3-t-vxBB@cluster0.h2dyq.mongodb.net/BookStore?retryWrites=true&w=majority'
 
-const MongoClient = mongodb.MongoClient
+app.use(bodyParser.json({limit:'30mb'}))
+app.use(bodyParser.urlencoded({extended:true, limit:'30mb'}))
+app.use(cors())
 
-MongoClient.connect(
-    process.env.RESTREVIEWS_DB_URI,
+mongoose.connect(
+    URI, 
     {
-        maxPoolSize:50,
-        wtimeoutMS:2500,
-        useNewUrlParser:true
+        useNewUrlParser: true, 
+        useUnifiedTopology: true
     }
-).catch(err => {
-    console.log(err.stack)
-    process.exit(1)
-}).then(async client => {
-    await booksDAO.injectDB(client)
-    app.listen(port, () => {
-        console.log(`listening on port ${port}`)
-    }
-    )
+).then(()=>{
+    console.log("Connected DB")
+    app.listen(PORT, ()=>{
+        console.log(`server listening on port ${PORT}`)
+    })
+}).catch((err)=>{
+    console.log(err)
 })
+
+app.use('/test', test)
+app.use('/auth', auth)
