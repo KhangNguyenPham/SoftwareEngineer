@@ -10,6 +10,15 @@ export const index = async(req, res)=>{
     }
 }
 
+export const get = async (req, res) =>{
+    try{
+        const test = await testModel.findById(req.params.id)
+        res.status(200).json(test)
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
 export const create = async(req, res)=>{
     try{
         const content = req.body.content
