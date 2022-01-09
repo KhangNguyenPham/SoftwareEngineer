@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', index)
 router.post('/', create)
-router.get('/update?id', update)
+router.put('/:id', update)
 router.get('/delete/id', remove)
 
 export default router

@@ -4,6 +4,7 @@ import cors from 'cors'
 import mongoose  from 'mongoose'
 import test from './routers/test.js'
 import auth from './routers/auth.js'
+import user from './routers/user.js'
 
 const app = express()
 const PORT = process.env.port || 5000
@@ -30,3 +31,4 @@ mongoose.connect(
 
 app.use('/test', test)
 app.use('/auth', auth)
+app.use('/user', user)
