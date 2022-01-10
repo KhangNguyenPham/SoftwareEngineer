@@ -6,6 +6,11 @@ import test from './routers/test.js'
 import auth from './routers/auth.js'
 import user from './routers/user.js'
 import staff from './routers/staff.js'
+import category from './routers/category.js'
+import discount from './routers/discount.js'
+import author from './routers/author.js'
+import instockitem from './routers/in_stock_item.js'
+import ordereditem from './routers/ordered_item.js'
 
 const app = express()
 const PORT = process.env.port || 5000
@@ -34,3 +39,8 @@ app.use('/test', test)
 app.use('/auth', auth)
 app.use('/user', user)
 app.use('/staff', staff)
+app.use('/category', category)
+app.use('/discount', discount)
+app.use('/author', author)
+app.use('/instockitem', instockitem)
+app.use('/ordereditem', ordereditem)
