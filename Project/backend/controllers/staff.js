@@ -1,4 +1,4 @@
-import { Staff } from "../models/staff.js"
+import { Staff } from "../models/Staff.js"
 
 export const index = async(req, res)=>{
     try{
@@ -25,12 +25,18 @@ export const create = async(req, res)=>{
         const sex = req.body.sex
         const address = req.body.address
         const salary = req.body.salary
+        const email = req.body.email
+        const username = req.body.username
+        const password = req.body.password
         const staff = new Staff({
             name: name,
             birthday: birthday,
             sex: sex,
             address: address,
-            salary: salary
+            salary: salary,
+            email: email,
+            username: username,
+            password: password
         })
         await staff.save()
         res.status(200).json(staff)
@@ -47,12 +53,18 @@ export const update = async(req, res)=>{
         const sex = req.body.sex
         const address = req.body.address
         const salary = req.body.salary
+        const email = req.body.email
+        const username = req.body.username
+        const password = req.body.password
         const updateStaff = {
             name: name,
             birthday: birthday,
             sex: sex,
             address: address,
-            salary: salary
+            salary: salary,
+            email: email,
+            username: username,
+            password: password
         }
         const staff = await Staff.findOneAndUpdate(
             {_id: id},
