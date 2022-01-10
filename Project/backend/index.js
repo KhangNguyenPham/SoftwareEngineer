@@ -14,6 +14,7 @@ import ordereditem from './routers/ordered_item.js'
 import book from './routers/book.js'
 import review from './routers/review.js'
 import order from './routers/order.js'
+import stock from './routers/stock.js'
 
 const app = express()
 const PORT = process.env.port || 5000
@@ -50,3 +51,4 @@ app.use('/ordereditem', ordereditem)
 app.use('/book', book)
 app.use('/review', review)
 app.use('/order', order)
+app.use('/stock', stock)
