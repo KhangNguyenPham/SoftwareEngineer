@@ -8,13 +8,13 @@ function App(props) {
   if (props.page == "login") {
     return (
       <div className="App">
-        <LoginForm />
+        <LoginForm socialMediaLink="" loginImage="../public/log.svg" />
       </div>
     )
   } else {
     return (
       <div className="App">
-        <SignupForm />
+        <SignupForm socialMediaLink="" registerImage="../public/register.svg" />
       </div>
     )
   }
