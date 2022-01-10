@@ -5,21 +5,21 @@ export default function LoginForm(props) {
         <div className="container">
             <div className="forms-container">
                 <div className="signin-signup">
-                    <form action={props.action} classNameName="sign-in-form">
-                        <h2 classNameName="title">Đăng Nhập</h2>
-                        <div classNameName="input-field">
-                            <i classNameName="fas fa-user"></i>
+                    <form action={props.action} className="sign-in-form">
+                        <h2 className="title">Đăng Nhập</h2>
+                        <div className="input-field">
+                            <i className="fas fa-user"></i>
                             <input type="text" placeholder="Tên Đăng Nhập" />
                         </div>
-                        <div classNameName="input-field">
-                            <i classNameName="fas fa-lock"></i>
+                        <div className="input-field">
+                            <i className="fas fa-lock"></i>
                             <input type="password" placeholder="Mật Khẩu" />
                         </div>
-                        <input type="submit" value="Đăng Nhập" classNameName="btn solid" />
-                        <p classNameName="social-text">Đăng Nhập Bằng Các Nền Tảng</p>
-                        <div classNameName="social-media">
-                            <a href={props.socialMediaLink} classNameName="social-icon">
-                                <i classNameName="fab fa-google"></i>
+                        <input type="submit" value="Đăng Nhập" className="btn solid" />
+                        <p className="social-text">Đăng Nhập Bằng Các Nền Tảng</p>
+                        <div className="social-media">
+                            <a href={props.socialMediaLink} className="social-icon">
+                                <i className="fab fa-google"></i>
                             </a>
                         </div>
                     </form>
