@@ -1,4 +1,4 @@
-import { Staff } from "../models/staff.js"
+import { Staff } from "../models/Staff.js"
 
 export const index = async(req, res)=>{
     try{
