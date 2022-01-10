@@ -11,6 +11,7 @@ import discount from './routers/discount.js'
 import author from './routers/author.js'
 import instockitem from './routers/in_stock_item.js'
 import ordereditem from './routers/ordered_item.js'
+import book from './routers/book.js'
 
 const app = express()
 const PORT = process.env.port || 5000
@@ -44,3 +45,4 @@ app.use('/discount', discount)
 app.use('/author', author)
 app.use('/instockitem', instockitem)
 app.use('/ordereditem', ordereditem)
+app.use('/book', book)
